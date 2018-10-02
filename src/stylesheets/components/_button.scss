@@ -1,0 +1,18 @@
+.btn-default {
+    display: inline-block;
+    color: $color-white;
+    background-color: $brand-grey-5;
+    width: 100%;
+    border: 0;
+    border-radius: .5rem;
+    padding: 1.2rem 0;
+    font-size: 1.8rem;
+    font-family: $merriweather-sans;
+    text-align: center;  
+    cursor: pointer;
+    @include ease-animation(.4s);
+    @include box-shadow(0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19));
+}
+.btn-blue {
+    background-color: $brand-blue-2;
+}

@@ -1,0 +1,13 @@
+html {
+    font-size: 10px; // Setting the root font-size and 1rem will be 10px
+}
+
+body {
+    font-family: $merriweather-sans;
+    font-weight: 400;
+}
+
+.primary-heading {
+    color: $brand-blue-1;
+    font-size: 2.8rem;
+}

@@ -1,0 +1,59 @@
+@mixin box-shadow($box-shadow...) {
+    -webkit-box-shadow: $box-shadow;
+       -moz-box-shadow: $box-shadow;
+            box-shadow: $box-shadow;
+}
+
+@mixin ease-animation($seconds){
+    -webkit-transition: all $seconds ease-in-out;
+    -moz-transition: all $seconds ease-in-out;
+    -ms-transform: all $seconds ease-in-out;
+    -o-transition: all $seconds ease-in-out;
+    transition: all $seconds ease-in-out;
+}
+/*
+
+MEDIA QUERY MANAGER: 
+
+Breakpoints:
+< 600px                 Phone
+600px - 900px           Tablet portrait
+900px - 1200px          Tablet landscape
+[1200px] - [1800px]     Normal styles apply 
+> 1800px                Large dekstop
+
+Breakpoints arguments:
+phone
+tab-port
+tab-land
+large-desktop
+
+*/
+
+@mixin respond($breakpoint){
+    @if $breakpoint == xs-phone {
+        @media (max-width: 23.5em){ // < 376px
+            @content;
+        }
+    }
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em){ // 376px - 600px
+            @content;
+        }
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em){ // 600px - 900px
+            @content;
+        }
+    }
+    @if $breakpoint == tab-land {
+        @media (min-width: 75em){ // 900px - 1200px
+            @content;
+        }
+    }
+    @if $breakpoint == large-desktop { // > 1800px
+        @media (max-width: 112em){
+            @content;
+        }
+    }
+}

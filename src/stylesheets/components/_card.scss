@@ -1,0 +1,78 @@
+.card-top {
+    max-width: $card-width;
+    margin: 0 auto;
+    text-align: right;
+    background-color: transparent;
+    @include respond(xs-phone){
+        max-width: $card-width-xs-phone;
+    }
+    &__heading {
+        margin: 0 0 1rem 0;
+        color: $brand-grey-2;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 1.6rem;
+    }
+}
+.card {
+    max-width: $card-width;
+    margin: 0 auto;
+    @include box-shadow(.4rem .7rem 1.6rem rgba($color-black, .22));
+    @include respond(xs-phone){
+        max-width: $card-width-xs-phone;
+    }
+    &__header {
+        background-color: $brand-blue-1;
+        color: $color-white;
+        padding: 4rem 2rem 1rem 2rem;
+        position: relative;
+        height: 6rem;
+    }
+    &__image {
+        position: absolute;
+        width: 8rem;
+        height: 9rem; 
+        background-color: $color-white;
+        bottom: -1.3rem;
+        right: 1.5rem;
+        @include box-shadow(.4rem .7rem 1.6rem rgba($color-black, .22));
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__name {
+        font-family: $merriweather;
+        font-size: 2.4rem;
+    }
+    &__content {
+        background-color: $color-white;
+        padding: 2.5rem 1rem;
+    }
+    &__row {
+        display: flex;
+        border-bottom: $brand-grey-7 solid 1px;
+        margin: 0 20px;
+        align-items: baseline;
+        font-size: 1.4rem;
+        height: 3rem;
+    }
+
+    &__title {
+        width: 20%;
+        p {
+            text-transform: uppercase;
+            width: 80px;
+            font-size: 1rem;
+            margin: .7rem 0 .5rem 0;
+        }
+    }
+
+    &__detail {
+        width: 80%;
+        p {
+            margin: .7rem 0 .5rem 0;
+            height: .9rem;
+        }
+    }
+}

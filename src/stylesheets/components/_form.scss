@@ -1,0 +1,58 @@
+.form {
+    margin-bottom: 3rem;
+
+    &__heading {
+        text-transform: uppercase;
+        font-size: 1rem;
+        color: $brand-grey-4;
+        border-bottom: $brand-grey-4 solid 1px;
+        margin: 4rem 0 2rem 0;
+        @include respond(xs-phone){
+            margin-top: 3rem;
+        }
+    }
+
+    &__row {
+        display: flex;
+        margin-bottom: 1rem;
+        @include respond(xs-phone){
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        flex: 1 0 0;
+        &:not(:last-child){
+            margin-right: 2rem;
+            @include respond(xs-phone){
+                margin-right: unset;
+            }
+        }
+        @include respond(xs-phone){
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: .8rem;
+        text-transform: uppercase;
+        color: $brand-blue-1;
+        font-size: 1.2rem;
+    }
+
+    &__input {
+        width: 100%;
+        padding: .7rem;
+        border-radius: .5rem;
+        border: 1px solid $brand-grey-6;
+        box-sizing: border-box;
+        color: $color-black;
+        font-family: $merriweather;
+        font-size: 1.6rem;
+    }
+
+    &__buttons {
+        margin: 3rem 0;
+    }
+}
