@@ -2,6 +2,7 @@
   "name": "form",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://madwester.github.io/h-card-build/",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
@@ -52,7 +53,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "compile:sass": "node-sass src/stylesheets/main.scss build/static/css/style.css -w"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -95,5 +97,9 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4"
   }
 }
