@@ -6,6 +6,7 @@
     @include respond(xs-phone){
         max-width: $card-width-xs-phone;
     }
+
     &__heading {
         margin: 0 0 1rem 0;
         color: $brand-grey-2;
@@ -21,6 +22,7 @@
     @include respond(xs-phone){
         max-width: $card-width-xs-phone;
     }
+
     &__header {
         background-color: $brand-blue-1;
         color: $color-white;
@@ -28,6 +30,7 @@
         position: relative;
         height: 6rem;
     }
+
     &__image {
         position: absolute;
         width: 8rem;
@@ -41,18 +44,25 @@
             height: 100%;
         }
     }
+
     &__name {
         font-family: $merriweather;
         font-size: 2.4rem;
+        @include respond(xs-phone){
+            font-size: 2rem;
+            width: 15rem;
+        }
     }
+    
     &__content {
         background-color: $color-white;
         padding: 2.5rem 1rem;
     }
+
     &__row {
         display: flex;
         border-bottom: $brand-grey-7 solid 1px;
-        margin: 0 20px;
+        margin: 0 2rem;
         align-items: baseline;
         font-size: 1.4rem;
         height: 3rem;
@@ -60,19 +70,31 @@
 
     &__title {
         width: 20%;
+        @include respond(xs-phone){
+            width: 25%;
+        }
         p {
             text-transform: uppercase;
-            width: 80px;
+            width: 8rem;
             font-size: 1rem;
             margin: .7rem 0 .5rem 0;
+            @include respond(xs-phone){
+                font-size: .9rem;
+            }
         }
     }
 
     &__detail {
         width: 80%;
+        @include respond(xs-phone){
+            width: 75%;
+        }
         p {
             margin: .7rem 0 .5rem 0;
             height: .9rem;
+            @include respond(xs-phone){
+                font-size: 1.2rem;
+            }
         }
     }
 }
