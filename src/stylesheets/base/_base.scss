@@ -15,20 +15,20 @@ body {
     flex: 1 0 0;
     padding: 2%;
     background-color: $color-white;
-    &__card-preview {
-        background-color: $brand-grey-1;
-        padding: 10% 5% 7% 5%;
-        @include respond(tab-port){
-            padding: 7% 5%;
-        }
-    }
-    &__card-builder {
+    &__form {
         padding: 2% 5%;
         @include respond(tab-port){
             padding: 5% 10%;
         }
         @include respond(phone){
             padding: 5%;
+        }
+    }
+    &__card {
+        background-color: $brand-grey-1;
+        padding: 10% 5% 7% 5%;
+        @include respond(tab-port){
+            padding: 7% 5%;
         }
     }
 }

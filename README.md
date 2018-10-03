@@ -42,7 +42,7 @@ $ npm start
 
 ### Library choices 
 * create-react-app for efficiency 
-* Webpack for usage of SASS
+* SASS for simplicity and better looking syntax
 
 ### Assumptions and thoughts
 * Form and design works in the 3 requested browsers: Google Chrome, Internet Explorer and Firefox. 

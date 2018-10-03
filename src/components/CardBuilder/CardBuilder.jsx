@@ -24,7 +24,6 @@ class CardBuilder extends Component {
         })
     }
 
-    // Target eventet som kommer ngn stans fran och target det som triggat
     uploadAvatar = (event) => {
         event.preventDefault();
         var imageURL = URL.createObjectURL(event.target.files[0]);
@@ -32,43 +31,45 @@ class CardBuilder extends Component {
             imageURL
         })
     }
+
     saveCard = (event) => {
         event.preventDefault();
         console.log('Saving form!!');
     }
-    // Inside a class no use for the function word
+
     onChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         });
     }
+
     render(){
         return (
             <div className="main-container">
-                <div className="container container__card-builder">
+                <div className="container container__form">
                     <h1 className="primary-heading">hCard Builder</h1>
                     <form className="form" onSubmit={this.saveCard}>
                         <h2 className="form__heading">Personal details</h2>
                         <div className="form__row">
-                            <InputContainer label="Given Name" onChange={this.onChange} value={this.state.givenName} name="givenName" />
-                            <InputContainer label="Surname" onChange={this.onChange} value={this.state.surname} name="surname" />
+                            <InputContainer label="Given Name" type="text" onChange={this.onChange} value={this.state.givenName} name="givenName" />
+                            <InputContainer label="Surname" type="text" onChange={this.onChange} value={this.state.surname} name="surname" />
                         </div>
                         <div className="form__row">
-                            <InputContainer label="Email" onChange={this.onChange} value={this.state.email} name="email" />
-                            <InputContainer label="Phone" onChange={this.onChange} value={this.state.phone} name="phone" />
+                            <InputContainer label="Email" type="email" onChange={this.onChange} value={this.state.email} name="email" />
+                            <InputContainer label="Phone" type="tel" onChange={this.onChange} value={this.state.phone} name="phone" />
                         </div>
                         <h2 className="form__heading">Address</h2>
                         <div className="form__row">
-                            <InputContainer label="House name or #" onChange={this.onChange} value={this.state.houseName} name="houseName" />
-                            <InputContainer label="Street" onChange={this.onChange} value={this.state.street} name="street" />
+                            <InputContainer label="House name or #" type="text" onChange={this.onChange} value={this.state.houseName} name="houseName" />
+                            <InputContainer label="Street" type="text" onChange={this.onChange} value={this.state.street} name="street" />
                         </div>
                         <div className="form__row">
-                            <InputContainer label="Suburb" onChange={this.onChange} value={this.state.suburb} name="suburb" />
-                            <InputContainer label="State" onChange={this.onChange} value={this.state.state} name="state" />
+                            <InputContainer label="Suburb" type="text" onChange={this.onChange} value={this.state.suburb} name="suburb" />
+                            <InputContainer label="State" type="text" onChange={this.onChange} value={this.state.state} name="state" />
                         </div>
                         <div className="form__row">
-                            <InputContainer label="Post code" onChange={this.onChange} value={this.state.postCode} name="postCode" />
-                            <InputContainer label="Country" onChange={this.onChange} value={this.state.country} name="country" />
+                            <InputContainer label="Post code" type="number" onChange={this.onChange} value={this.state.postCode} name="postCode" />
+                            <InputContainer label="Country" type="text" onChange={this.onChange} value={this.state.country} name="country" />
                         </div>
                         <div className="form__row form__buttons">
                             <ImageButton uploadAvatar={this.uploadAvatar}/>
@@ -78,17 +79,17 @@ class CardBuilder extends Component {
                         </div>
                     </form>
                 </div>
-                <div className="container container__card-preview">
+                <div className="container container__card">
                     <div className="card-top">
                         <h2 className="card-top__heading">HCard Preview</h2>
                     </div>
                     <div className="card vcard">
                         <div className="card__header">
                             <span className="n">
-                                <h2 className="card__name family-name given-name">{`${this.state.givenName} ${this.state.surname}`}</h2>
+                                <h2 className="card__name family-name given-name fn">{`${this.state.givenName} ${this.state.surname}`}</h2>
                             </span>
                             <div className="card__image">
-                                <img className="photo" src={this.state.imageURL}></img>
+                                <img className="photo" alt="Profile" src={this.state.imageURL}></img>
                             </div>
                         </div>
                         <div className="card__content">
